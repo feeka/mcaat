@@ -24,7 +24,7 @@
 </head>
 <body>
   <!--Chapter 1 and Intro-->  
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
+    <nav  class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">P59</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,12 +33,12 @@
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="#ch1">Introduction >
+                <a class="nav-link " href="#ch1">Introduction >
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#ch2">Challenges of modern tools ></a>
+                <a class="nav-link" href="#ch2">Challenges of Modern Tools ></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#ch3">Motivation ></a>
@@ -47,7 +47,7 @@
                 <a class="nav-link" href="#ch4">Central Idea ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#ch5">Challenges of modern tools ></a>
+                <a class="nav-link" href="#ch5">The Algorithm ></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#ch6">Results ></a>
@@ -66,6 +66,7 @@
       <br>
       <h2 style="color:white"><center>Graph Based Strategies to Finding CRISPR Arrays in Metagenomic Data</center></h2>
         <h2><center>Graph Based Strategies to Finding CRISPR Arrays in Metagenomic Data</center></h2>
+        <h3 style="color: darkslategrey;"><center>Fikrat Talibli & Björn Voss</center></h3>
         <hr>
         <h3>Introduction</h3>
         <hr>
@@ -129,9 +130,10 @@
       </ul>
       
     </div>
-  <div id="myImg" class="col-md-6 col-sm-12"><br><img src="2.png" style="max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+  <div id="myImg" class="col-md-6 col-sm-12"><br><img src="2.png" style="display: block; margin-left: auto;
+    margin-right: auto; max-height:85%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
   
-  <p><b>Raw metagenomic data</b> offer the potential to increase the diversity of known CRISPR-Cas systems.
+  <p><b><a target="_blank" href="https://www.genome.gov/genetics-glossary/Metagenomics#:~:text=Metagenomics%20is%20the%20study%20of,or%20in%20a%20water%20sample.">Raw metagenomic data</a></b> offer the potential to increase the diversity of known CRISPR-Cas systems.
     <b>Metagenomic data</b> represent a snapshot of habitat at a defined timepoint.
     </p>
 </div>
@@ -146,8 +148,9 @@
   <h3>Motivation</h3>
   <hr>
   <div class="row">
-    <div id="img04" class="col-md-6 col-sm-12"><br><img src="3.png" style="max-height:80%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
-    <div class="col-md-6 col-sm-12">
+    <div id="img04" class="col-md-5 col-sm-12"><br><img src="3.png" style="display: block; margin-left: auto;
+      margin-right: auto; max-height:85%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+    <div class="col-md-7 col-sm-12">
     <p>Schema above(on the left) demonstrates two different approaches:
     <ul>
       <li>We took a raw metagenomic dataset with 425 mil. Illumina reads;</li>
@@ -155,22 +158,22 @@
       <ul>
         <li><b><i>Assembly-first</i></b> approach:</li>
         <ol>
-          <li>Assemble metagenome using e.g. <b>MegaHIT</b></li>
-          <li>Use one of the tools for CRISPR analysis: <b>CRT</b>, <b>CRISPRDetect</b></li>
+          <li>Assemble metagenome using e.g. <b><a href="https://pubmed.ncbi.nlm.nih.gov/25609793/" target="_blank">MegaHIT</a></b></li>
+          <li>Use one of the tools for CRISPR analysis: <b><a target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/17577412/">CRT</a></b>, <b><a href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-2627-0" target="_blank">CRISPRDetect</a></b></li>
         </ol>
       </ul>
       <ul>
         <li><b><i>Analysis</i></b> approach:</li>
         <ol>
           <li>Read in raw metagenomic dataset</li>
-          <li>Use a tool for CRISPR analysis: <b>CRASS</b></li>
+          <li>Use a tool for CRISPR analysis: <b><a href="https://pubmed.ncbi.nlm.nih.gov/23511966/" target="_blank">CRASS</a></b></li>
         </ol>
       </ul>
       <li>Venn diagram with predicted CRISPR systems using three tools: CRT,CRISPRDetect and CRASS .</li>
       <ul>
-        <li>CRISPRDetect predicted 188 CRISPR systems;</li>
-        <li>CRT predicted 72 CRISPR systems;</li>
-        <li>CRASS detected 290 CRISPR systems.</li>  
+        <li>CRISPRDetect predicted <b>188</b> CRISPR systems;</li>
+        <li>CRT predicted <b>72</b> CRISPR systems;</li>
+        <li>CRASS detected <b>290</b> CRISPR systems.</li>  
       </ul>
       <li><b>The overlap</b> between these three tools is very small - only 5 CRISPR systems.</li>
     </ul>
@@ -274,7 +277,7 @@
     <div class="card border-secondary">
       <div class="card-header"><h5>Computationally Formulated Goal</h5></div>
       <div class="card-body">
-        <p class="card-title">Find cycles limited to 46-94 nodes in de Bruijn graph constructed from metagenomic datasets, with k-mer size 22.</p>
+        <p class="card-title">Find cycles limited to <b>46-94</b> nodes in de Bruijn graph constructed from metagenomic datasets, with <b>k-mer size <i>22</i>.</b></p>
         
       </div>
     </div>
@@ -285,48 +288,173 @@
     <h3 style="color:white">TEAM Wo Ist?</h3>
     <hr>
     
-    <h3>Motivation</h3>
+    <h3>The algorithm</h3>
     <hr>
     <div class="row">
-      <div id="img04" class="col-md-6 col-sm-12"><br><img src="3.png" style="max-height:80%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
-      <div class="col-md-6 col-sm-12">
-      <p>Schema above(on the left) demonstrates two different approaches:
-      <ul>
-        <li>We took a raw metagenomic dataset with 425 mil. Illumina reads;</li>
-        <li>We applied 2 different approaches</li>
-        <ul>
-          <li><b><i>Assembly-first</i></b> approach:</li>
-          <ol>
-            <li>Assemble metagenome using e.g. <b>MegaHIT</b></li>
-            <li>Use one of the tools for CRISPR analysis: <b>CRT</b>, <b>CRISPRDetect</b></li>
-          </ol>
-        </ul>
-        <ul>
-          <li><b><i>Analysis</i></b> approach:</li>
-          <ol>
-            <li>Read in raw metagenomic dataset</li>
-            <li>Use a tool for CRISPR analysis: <b>CRASS</b></li>
-          </ol>
-        </ul>
-        <li>Venn diagram with predicted CRISPR systems using three tools: CRT,CRISPRDetect and CRASS .</li>
-        <ul>
-          <li>CRISPRDetect predicted 188 CRISPR systems;</li>
-          <li>CRT predicted 72 CRISPR systems;</li>
-          <li>CRASS detected 290 CRISPR systems.</li>  
-        </ul>
-        <li><b>The overlap</b> between these three tools is very small - only 5 CRISPR systems.</li>
-      </ul>
-      
-    </p>
-    <p>
-      <b>We propose the new method based on <a target="_blank" href="https://towardsdatascience.com/genome-assembly-using-de-bruijn-graphs-69570efcc270">de Bruijn graph.</a></b>
-    </p>
+      <div id="img05" class="col-md-5 col-sm-12"><img src="9.png" style="display: block; margin-left: auto;
+        margin-right: auto; max-height:85%; max-width: 100%; height:auto; width:auto" id="responsive-image"></div>
+     <div class="col-md-7 col-sm-12">
+      <div class="card border-secondary">
+        <div class="card-header"><h5>STRUCTURE OF THE ALGORITHM</h5></div>
+        <div class="card-body">
+          <p class="card-title">The rough structure of the algorithm is as follows:</p>
+          <p class="card-text"><ul>
+            <li>Generate a de Bruijn graph.</li>
+            <li><b><i>Pre-processing:</i></b> this algorithm masks linear paths in de Bruijn graph to optimize the next two steps.</li>
+            <li>Use <a href="https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm" target="_blank"><b>Tarjan's algorithm</b></a> to isolate all strongly connected components, i.e. the area where any chosen node reaches itself through any taken route.</li>
+            <li>Use <b>restricted <a target="_blank" href="">Johnson's algorithm</a></b> to find cycles 46-94 nodes. Johnson's algorithm finds every circle/cycle in any given graph. The time complexity can be reduced given that the number of nodes in each circle is restricted to certain quantity.</li>
+            <li>Future outlook: post-processing algorithmto remove false positives.</li>
+          </ul></p>
+        </div>
       </div>
+      
+     </div>
     </div>
     
    
   </div> 
+  <div class="container" id="ch6">
+    <h3 style="color:white">TEAM Wo Ist?</h3>
+    <hr>
+    
+    <h3>Results</h3>
+    <hr>
+    <div class="row">
+      <div id="img06" class="col-md-5 col-sm-12"><img src="10.png" style="display: block; margin-left: auto;
+        margin-right: auto; max-height:85%; max-width: 100%; height:auto; width:auto" id="responsive-image"></div>
+     <div class="col-md-7 col-sm-12">
+      <div class="card border-secondary">
+        <div class="card-header"><h6>Proof of concept:</h6></div>
+        <div class="card-body">
+          <p class="card-title">We applied our approach on genomes with known CRISPR systems. Here are the characteristics of the genomes:</p>
+          <p class="card-text"><ul>
+            <li><b>35</b> genomes from <a href="https://crisprcas.i2bc.paris-saclay.fr/MainDb/StrainList" target="_blank">crispr-cas-db</a></li>
+            <li>The genome length varied anywhere from <b>1-9 mil. bp.</b></li>
+            <li>The quantity of CRISPR arrays varied from <b>1-110</b> per genome.</li>
+            <li>Number of spacers in those CRISPR arrays was <b>3050</b>.</li>
+            <li>Number of CRISPR systems in total was <b>230</b>.</li>  
+          </ul></p>
+        </div>
+      </div>
+      <br>
+      <div class="card border-success">
+        <div class="card-header"><h6>Results:</h6></div>
+        <div class="card-body">
+          <div class="card-text">
+            <ul>
+              <li><b>100%</b> of known systems</li>
+              <li><b>~96 %</b> perfect spacer matches</li>
+            </ul></div>
+        </div>
+      </div>
+     </div>
+    </div>
+   
+  </div> 
+  <div class="container" id="ch7">
+    <h3 style="color:white">TEAM Wo Ist?</h3>
+    <hr>
+    
+    <h3>Future Outlook and Take-Home-Message</h3>
+    <hr>
+    <div class="row">
+      
+      <div class="col-md-5 col-sm-12">
+        <br>
+        <div class="card border-warning">
+          <div class="card-header"><h6>Future Outlook</h6></div>
+          <div class="card-body">
+            <p class="card-text"><ul>
+              <li>Optimization of de Bruijn graph as a data structure</li>
+              <li>Algorithm for removal of false positives</li>
+              <li>Detection of imperfect repeats</li>
+              <li>Graph reduction</li>
+              <li>Parallel computation</li>  
+            </ul></p>
+          </div>
+        </div>
+      </div>
+       
+        <div class="col-md-7 col-sm-12">
+          <br>
+          <div class="card border-success">
+            <div class="card-header"><h6>Take-home Message</h6></div>
+            <div class="card-body">
+              <div class="card-text">
+                <ul>
+                  <li>We introduced a new approach, based on a de Bruijn graph, which is the basic data structure used by many (meta-)genome assemblers.</li>
+                  <li>We proved that CRISPR arrays are multicycles of length 46-94 nodes in a de Bruijn graph with k-mer size 22.</li>
+                  <li>As a proof of concept, we used our approach on known genomic datasets and benchmarked against state-of-the-art methods, where we achieved 96% exact matches in spacer detection.
+                  </li>
+                  
+                </ul></div>
+            </div>
+      </div>
+     </div>
+    </div>
+   
+  </div> 
+  <br>
+  <br>
+  <br>
+  <section class="">
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center text-md-start">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Acknowledgement</h5>
   
+            <p>
+              This work was funded by the German Ministry of Education and Priority Program: “Much More Than Defense: the Multiple Functions and Facets of CRISPR-Cas (SPP 2141)”
+            </p>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+  
+            <div id="img09" ><img src="11.png" style="display: block; margin-left: auto;
+              margin-right: auto; max-height:85%; max-width: 100%; height:auto; width:auto" id="responsive-image"></div>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0">Links</h5>
+  
+            <ul class="list-unstyled">
+              <li>
+                <a target="_blank" href="https://www.ibmg.uni-stuttgart.de/rnabioinf/" class="text-white">Our Group</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.dfg.de/" class="text-white">DFG</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://gepris.dfg.de/gepris/projekt/360987069" class="text-white">SPP2141</a>
+              </li>
+             
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022
+        <a class="text-white" href="https://www.ibmg.uni-stuttgart.de/rnabioinf/">Computational Biology, IBMG</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </section>
 </body>
 
 <script>
