@@ -1,12 +1,12 @@
 <head>
     <meta charset="utf-8">
-    <title>Bootswatch: Lux</title>
+    <title>P59: Graph Algorithms for CRISPR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap.css">
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -23,34 +23,34 @@
   <script id="_carbonads_projs" type="text/javascript" src="https://srv.carbonads.net/ads/CKYIE23N.json?segment=placement:bootswatchcom&amp;callback=_carbonads_go"></script>
 </head>
 <body>
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!--Chapter 1 and Intro-->  
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">MeDaMCAN</a>
+          <a class="navbar-brand" href="#">P59</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Introduction |
+                <a class="nav-link active" href="#ch1">Introduction >
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Challenges of modern tools |</a>
+                <a class="nav-link" href="#ch2">Challenges of modern tools ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Motivation |</a>
+                <a class="nav-link" href="#ch3">Motivation ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Central Idea |</a>
+                <a class="nav-link" href="#ch4">Central Idea ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Challenges of modern tools |</a>
+                <a class="nav-link" href="#ch5">Challenges of modern tools ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Results |</a>
+                <a class="nav-link" href="#ch6">Results ></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Outlook and take-home message </a>
@@ -62,7 +62,9 @@
           </div>
         </div>
       </nav>
+      <div class="container" id="ch1">
       <br>
+      <h2 style="color:white"><center>Graph Based Strategies to Finding CRISPR Arrays in Metagenomic Data</center></h2>
         <h2><center>Graph Based Strategies to Finding CRISPR Arrays in Metagenomic Data</center></h2>
         <hr>
         <h3>Introduction</h3>
@@ -74,21 +76,300 @@
             </ul>
         </p>
         <div class="row">
-          <div class="col-md-6 col-sm-12"><img src="1.png" style="max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
-          <div class="col-md-6 col-sm-12">  
+          <div id="myImg" class="col-md-6 col-sm-12"><br><img src="1.png" style="max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+          
+          <div class="col-md-6 col-sm-12">
+            <br>  
             <div class="card border-info">
-              <div class="card-header">The GOAL</div>
+              <div style="font-size: large; color: blue;" class="card-header">The GOAL</div>
               <div class="card-body">
-                <p1 style="font-size: medium; color: blue;"><b>Our goal is to find CRISPR arrays. </b></p1>
+                
+                <p style="font-size: large; color: blue;">Our work concentrates on
+                  <i>finding CRISPR arrays. </i></p>
               </div>
             </div>
         </div>
         
-        <br>
-        <br>
         
-          
-    </div>
+        <div id="myModal" class="modal">
 
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+          <br>
+          <br>
+          <img class="modal-content" src="1.png" d="img01">
+        
+          <!-- Modal Caption (Image Text) -->
+          <div id="">CRISPR arrays structure</div>
+          
+        </div>
+        <div class="container">
+        <p color="white"></p>
+        <p>Additional info from <a target=”_blank” href="https://crisprcas.i2bc.paris-saclay.fr/Home/About">CRISPR-Cas++</a>:</p>
+          <ul>
+            <li><b>Repeats and Spacers</b>: A CRISPR is a succession of 23-47bp sequences called repeats separated by unique sequences of a similar length (spacers). </li>
+            <li><b>A leader sequence</b>: the CRISPR locus is AT-rich leader sequence of 100-350 bp, acting as a promoter for the pre-crRNA synthesis.</li>
+            <li>Together with a set of genes called cas for “CRISPR-associated”, they constitute an immune system.</li>
+          </ul>
+        </div>
+        </div>
+</div>
+<div class="container" id="ch2">
+  <hr>
+  <h3>Challenges of modern tools</h3>
+  <hr>
+  
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <p>There are many tools that are using bacterial genomes for finding CRISPR Arrays.</p>
+    <p>However, viruses are underrepresented in reference databases and have high mutation rates. Additionally:
+    </p><ul>
+        <li>Most organisms cannot  be cultivated in labs </li>
+        <li>A lot of data is lost in assembly </li>
+      </ul>
+      
+    </div>
+  <div id="myImg" class="col-md-6 col-sm-12"><br><img src="2.png" style="max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+  
+  <p><b>Raw metagenomic data</b> offer the potential to increase the diversity of known CRISPR-Cas systems.
+    <b>Metagenomic data</b> represent a snapshot of habitat at a defined timepoint.
+    </p>
+</div>
+<p style="color:blue"> <i>Goal adjustment: find CRISPR arrays in <b>metagenomic data.</b></i></p>
+
+
+</div>
+<div class="container" id="ch3">
+  <h3 style="color:white">Chap3</h3>
+  <hr>
+  
+  <h3>Motivation</h3>
+  <hr>
+  <div class="row">
+    <div id="img04" class="col-md-6 col-sm-12"><br><img src="3.png" style="max-height:80%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+    <div class="col-md-6 col-sm-12">
+    <p>Schema above(on the left) demonstrates two different approaches:
+    <ul>
+      <li>We took a raw metagenomic dataset with 425 mil. Illumina reads;</li>
+      <li>We applied 2 different approaches</li>
+      <ul>
+        <li><b><i>Assembly-first</i></b> approach:</li>
+        <ol>
+          <li>Assemble metagenome using e.g. <b>MegaHIT</b></li>
+          <li>Use one of the tools for CRISPR analysis: <b>CRT</b>, <b>CRISPRDetect</b></li>
+        </ol>
+      </ul>
+      <ul>
+        <li><b><i>Analysis</i></b> approach:</li>
+        <ol>
+          <li>Read in raw metagenomic dataset</li>
+          <li>Use a tool for CRISPR analysis: <b>CRASS</b></li>
+        </ol>
+      </ul>
+      <li>Venn diagram with predicted CRISPR systems using three tools: CRT,CRISPRDetect and CRASS .</li>
+      <ul>
+        <li>CRISPRDetect predicted 188 CRISPR systems;</li>
+        <li>CRT predicted 72 CRISPR systems;</li>
+        <li>CRASS detected 290 CRISPR systems.</li>  
+      </ul>
+      <li><b>The overlap</b> between these three tools is very small - only 5 CRISPR systems.</li>
+    </ul>
+    
+  </p>
+  <p>
+    <b>We propose the new method based on <a target="_blank" href="https://towardsdatascience.com/genome-assembly-using-de-bruijn-graphs-69570efcc270">de Bruijn graph.</a></b>
+  </p>
+    </div>
+  </div>
+  
+ 
+</div>
+<div class="container" id="ch4">
+  <h3 style="color:white">Chap4</h3>
+  <hr>
+  
+  <h3>Central idea</h3>
+  <hr>
+  <div class="row">
+    <div id="img04" class="col-md-6 col-sm-12"><br><img src="4.png" style="align-items: center; max-height:80%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+    <div id="img04" class="col-md-6 col-sm-12"><br><img src="5.png" style="align-items: center; max-height:80%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+    
+  </div>
+  </p>
+  <p>
+    Definitions: 
+  </p>
+  <ul>
+    <li>
+      <b>k-mers</b> are slices of reads of length k at every index of a read sequence. 
+    </li>
+    <li>
+      <b>De Bruijn Graph</b> is a directed graph, where Edges are <i>k-mers</i> and nodes are <i>k-1</i>-mers. 
+      E.g.: edges: <i>{ACTG,CTGT}</i> Nodes: <i>{ACT,CTG}</i>
+    </li>
+  </ul>
+    <p>Let us see how the CRISPR arrays look like on de Bruijn graph. Suppose we have following CRISPR array sequence: <i>AACTTAAACCGGAAC</i></p> 
+    <div id="myImg1" class="row">
+      <div class="col-md-6 col-sm-12">
+        <img  src="6.png" style="display: block;
+        margin-left: auto;
+        margin-right: auto; max-height:100%; max-width: 100%; height:auto; width:auto" id="responsive-image">
+        <h5 style="color:white">TEAM OTTO</h5>
+        <h5 style="color:black"><ul>
+          <li>
+            Repeat: AAC 
+          </li>
+          <li>
+            Spacers: TTA, CGG
+          </li>
+        </ul>
+      </h5>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <img  src="6_1.png" style=" display: block;
+        margin-left: auto;
+        margin-right: auto; max-height:85%; max-width: 85%; height:auto; width:auto" id="responsive-image">
+      </div>
+    </div>
+    <div id="myModal1" class="modal">
+
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+      <br>
+      <br>
+     
+      <img class="modal-content" src="6_1.png" d="img02">
+    
+      <!-- Modal Caption (Image Text) -->
+      
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img  src="7.png" style="display: block;
+        margin-left: auto;
+        margin-right: auto;max-height:85%; max-width: 85%; height:auto; width:auto" id="responsive-image">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <img  src="8.png" style="display: block;
+        margin-left: auto;
+        margin-right: auto; max-height:100%; max-width: 100%; height:auto; width:auto" id="responsive-image">
+      </div>
+    </div>
+    <div class="card border-secondary">
+      <div class="card-header"><h5>CYCLES AND CRISPR ARRAYS</h5></div>
+      <div class="card-body">
+        <p class="card-title">From above we see that CRISPR arrays are forming <b>multicycles</b> with following parameters:</p>
+        <p class="card-text"><ul>
+          <li><b><i>k</i></b> is less than minimum length of repeat</li>
+          <li>minimum length of repeat is <b>23</b> bp => <b>k=22</b></li>
+          <li>length of each cycle:</li>
+          <ul>
+            <li>Sum of spacer and repeat lengths</li>
+            <li>they vary from 46-94 nodes.</li>
+          </ul>
+        </ul></p>
+      </div>
+    </div>
+    <br>
+    <div class="card border-secondary">
+      <div class="card-header"><h5>Computationally Formulated Goal</h5></div>
+      <div class="card-body">
+        <p class="card-title">Find cycles limited to 46-94 nodes in de Bruijn graph constructed from metagenomic datasets, with k-mer size 22.</p>
+        
+      </div>
+    </div>
+    <br>
+    
+  </div>
+  <div class="container" id="ch5">
+    <h3 style="color:white">TEAM Wo Ist?</h3>
+    <hr>
+    
+    <h3>Motivation</h3>
+    <hr>
+    <div class="row">
+      <div id="img04" class="col-md-6 col-sm-12"><br><img src="3.png" style="max-height:80%; max-width: 100%; height:auto; width:auto" id="responsive-image"> </div>
+      <div class="col-md-6 col-sm-12">
+      <p>Schema above(on the left) demonstrates two different approaches:
+      <ul>
+        <li>We took a raw metagenomic dataset with 425 mil. Illumina reads;</li>
+        <li>We applied 2 different approaches</li>
+        <ul>
+          <li><b><i>Assembly-first</i></b> approach:</li>
+          <ol>
+            <li>Assemble metagenome using e.g. <b>MegaHIT</b></li>
+            <li>Use one of the tools for CRISPR analysis: <b>CRT</b>, <b>CRISPRDetect</b></li>
+          </ol>
+        </ul>
+        <ul>
+          <li><b><i>Analysis</i></b> approach:</li>
+          <ol>
+            <li>Read in raw metagenomic dataset</li>
+            <li>Use a tool for CRISPR analysis: <b>CRASS</b></li>
+          </ol>
+        </ul>
+        <li>Venn diagram with predicted CRISPR systems using three tools: CRT,CRISPRDetect and CRASS .</li>
+        <ul>
+          <li>CRISPRDetect predicted 188 CRISPR systems;</li>
+          <li>CRT predicted 72 CRISPR systems;</li>
+          <li>CRASS detected 290 CRISPR systems.</li>  
+        </ul>
+        <li><b>The overlap</b> between these three tools is very small - only 5 CRISPR systems.</li>
+      </ul>
+      
+    </p>
+    <p>
+      <b>We propose the new method based on <a target="_blank" href="https://towardsdatascience.com/genome-assembly-using-de-bruijn-graphs-69570efcc270">de Bruijn graph.</a></b>
+    </p>
+      </div>
+    </div>
+    
+   
+  </div> 
+  
+</body>
+
+<script>
+  var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+var modal1 = document.getElementById("myModal1");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img01 = document.getElementById("myImg1");
+var modalImg01 = document.getElementById("img02");
+img01.onclick = function(){
+  modal1.style.display = "block";
+  modalImg1.src = this.src;
+}
+
+// Get the <span> element that closes the modal
+var span1 = document.getElementsByClassName("close")[1];
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function() {
+  modal1.style.display = "none";
+}
+$('.navbar-nav>li>a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
+});
+
+</script>
     
 </body>
